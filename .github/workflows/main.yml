@@ -9,4 +9,8 @@ jobs:
     steps:
       - name: welcome
         run: echo "Welcome to DevOps"
+      - name: show-date
+        run: date
+      - name: show hostname
+        run: hostname
       
