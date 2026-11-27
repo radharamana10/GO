@@ -1,16 +1,20 @@
-name: e-commerce-pipeline
+name: gitclone&maven
 on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch: 
 env:
   ENVIRONMENT: production
 jobs:
-  build:
+  maven-build:
+    name: clone the repo and build using maven
     runs-on: ubuntu-latest
     steps:
-      - name: welcome
-        run: echo "Welcome to DevOps"
-      - name: show-date
-        run: date
-      - name: show hostname
-        run: hostname
+      - name: checkout the source-code
+        uses: actions/checkout@v4
+        
       
